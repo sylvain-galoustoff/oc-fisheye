@@ -39,74 +39,73 @@ h1 {
     color: #901C1C;
 }
 
-.photographer_section {
+#photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 100px;
     row-gap: 70px;
 }
 
-.photographer_section article {
+#photographer_section article {
     width: 100%;
     display: flex;
 }
 
-.photographer_section article:nth-child(3n) {
+#photographer_section article:nth-child(3n) {
     justify-content: flex-end;
 }
 
-.photographer_section article:nth-child(3n-1) {
+#photographer_section article:nth-child(3n-1) {
     justify-content: center;
 }
 
-.photographer_section .article-body {
+#photographer_section .article-body {
     width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.photographer_section article a,
-.photographer_section article h2,
-.photographer_section article .location,
-.photographer_section article .tagline,
-.photographer_section article .price {
+#photographer_section article a,
+#photographer_section article h2,
+#photographer_section article .location,
+#photographer_section article .tagline,
+#photographer_section article .price {
     width: 100%;
     display: flex;
     justify-content: center;
     white-space: nowrap;
 }
 
-.photographer_section article a {
+#photographer_section article a {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
 }
 
-.photographer_section article a .rounded-avatar,
-.photographer_section article a h2 {
+#photographer_section article a .rounded-avatar,
+#photographer_section article a h2 {
     transition: all .5s ease-out;
 }
 
-.photographer_section article a:hover .rounded-avatar {
+#photographer_section article a:hover .rounded-avatar {
     transform: scale(1.1);
 }
 
-.photographer_section article a:hover h2 {
+#photographer_section article a:hover h2 {
     color: var(--primary);
 }
 
-
-.photographer_section article h2,
-.photographer_section article p {
+#photographer_section article h2,
+#photographer_section article p {
     margin: 0;
 }
 
-.photographer_section article h2 {
+#photographer_section article h2 {
     margin-top: 20px;
 }
 
-.photographer_section article h2 {
+#photographer_section article h2 {
     color: var(--secondary);
     font-size: 36px;
 }

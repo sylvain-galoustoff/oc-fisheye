@@ -1,3 +1,5 @@
+import Avatar from "../components/Avatar";
+
 function photographerTemplate(data) {
     const { name, portrait, city, country, tagline, price, id } = data;
 
@@ -13,12 +15,14 @@ function photographerTemplate(data) {
         link.setAttribute('href', `./photographer.html?id=${id}`)
         link.setAttribute('title', `Voir la page de ${name}`)
 
-        const imgWrapper = document.createElement('div')
-        imgWrapper.classList.add('rounded-avatar')
+        // const imgWrapper = document.createElement('div')
+        // imgWrapper.classList.add('rounded-avatar')
 
-        const img = document.createElement('img');
-        img.setAttribute("src", picture)
-        img.setAttribute("alt", `Photo portrait de ${name}`)
+        // const img = document.createElement('img');
+        // img.setAttribute("src", picture)
+        // img.setAttribute("alt", `Photo portrait de ${name}`)
+
+        const avatar = Avatar(name, picture)
 
         const h2 = document.createElement('h2');
         h2.textContent = name;
@@ -36,7 +40,7 @@ function photographerTemplate(data) {
         costPrice.textContent = `${price}/jour`
 
         imgWrapper.appendChild(img)
-        link.appendChild(imgWrapper)
+        link.appendChild(avatar)
         link.appendChild(h2)
 
         articleBody.appendChild(link)
