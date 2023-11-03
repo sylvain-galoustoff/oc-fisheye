@@ -10,7 +10,7 @@ function photographerTemplate(data) {
         articleBody.classList.add('article-body')
 
         const link = document.createElement('a')
-        link.setAttribute('href', `./photographer?id=${id}`)
+        link.setAttribute('href', `./photographer.html?id=${id}`)
         link.setAttribute('title', `Voir la page de ${name}`)
 
         const imgWrapper = document.createElement('div')
