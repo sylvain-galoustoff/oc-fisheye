@@ -1,5 +1,12 @@
 @import url("photographer.css");
 
+:root {
+    --primary: #901c1c;
+    --secondary: #d3573c;
+    --text-primary: #000000;
+    --text-secondary: #525252;
+}
+
 *,
 *:before,
 *:after {
@@ -59,27 +66,48 @@ h1 {
     align-items: center;
 }
 
-article h2,
-article .location,
-article .tagline,
-article .price {
+.photographer_section article a,
+.photographer_section article h2,
+.photographer_section article .location,
+.photographer_section article .tagline,
+.photographer_section article .price {
     width: 100%;
     display: flex;
     justify-content: center;
     white-space: nowrap;
 }
 
-article h2,
-article p {
+.photographer_section article a {
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.photographer_section article a .rounded-avatar,
+.photographer_section article a h2 {
+    transition: all .5s ease-out;
+}
+
+.photographer_section article a:hover .rounded-avatar {
+    transform: scale(1.1);
+}
+
+.photographer_section article a:hover h2 {
+    color: var(--primary);
+}
+
+
+.photographer_section article h2,
+.photographer_section article p {
     margin: 0;
 }
 
-article h2 {
+.photographer_section article h2 {
     margin-top: 20px;
 }
 
 .photographer_section article h2 {
-    color: #D3573C;
+    color: var(--secondary);
     font-size: 36px;
 }
 
@@ -99,7 +127,7 @@ article h2 {
 }
 
 .location {
-    color: #901C1C;
+    color: var(--primary);
     font-size: 16px;
 }
 
@@ -108,6 +136,6 @@ article h2 {
 }
 
 .price {
-    color: #757575;
+    color: var(--text-secondary);
     font-size: 12px;
 }

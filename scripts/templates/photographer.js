@@ -9,16 +9,16 @@ function photographerTemplate(data) {
         const articleBody = document.createElement('div')
         articleBody.classList.add('article-body')
 
-        const imgWrapper = document.createElement('a')
+        const link = document.createElement('a')
+        link.setAttribute('href', `./photographer?id=${id}`)
+        link.setAttribute('title', `Voir la page de ${name}`)
+
+        const imgWrapper = document.createElement('div')
         imgWrapper.classList.add('rounded-avatar')
-        imgWrapper.setAttribute('href', `./photographer?id=${id}`)
-        imgWrapper.setAttribute('title', `Voir la page de ${name}`)
 
         const img = document.createElement('img');
         img.setAttribute("src", picture)
         img.setAttribute("alt", `Photo portrait de ${name}`)
-
-        imgWrapper.appendChild(img)
 
         const h2 = document.createElement('h2');
         h2.textContent = name;
@@ -35,12 +35,17 @@ function photographerTemplate(data) {
         costPrice.classList.add('price')
         costPrice.textContent = `${price}/jour`
 
-        article.appendChild(articleBody);
-        articleBody.appendChild(imgWrapper);
-        articleBody.appendChild(h2);
-        articleBody.appendChild(location);
-        articleBody.appendChild(slogan);
-        articleBody.appendChild(costPrice);
+        imgWrapper.appendChild(img)
+        link.appendChild(imgWrapper)
+        link.appendChild(h2)
+
+        articleBody.appendChild(link)
+        articleBody.appendChild(location)
+        articleBody.appendChild(slogan)
+        articleBody.appendChild(costPrice)
+
+        article.appendChild(articleBody)
+
         return (article);
     }
     return { name, picture, getUserCardDOM }
