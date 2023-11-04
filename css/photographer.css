@@ -24,7 +24,7 @@ body {
 }
 
 .photograph-header.container {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .photograph-header h1,
@@ -76,10 +76,6 @@ body {
 }
 
 /* TOOLBAR */
-#toolbar {
-    border: 1px solid red;
-}
-
 #sorter {
     display: flex;
     align-items: center;
@@ -147,6 +143,62 @@ body {
     border-bottom: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+/* MEDIAS */
+#medias {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 50px;
+    padding: 20px 0;
+}
+
+.media-card-wrapper {
+    display: flex;
+}
+
+#medias .media-card-wrapper:nth-child(3n) {
+    justify-content: flex-end;
+}
+
+#medias .media-card-wrapper:nth-child(3n-1) {
+    justify-content: center;
+}
+
+.media-card {
+    width: 350px;
+}
+
+.media-card-thumbnail {
+    height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.media-card-thumbnail img,
+.media-card-thumbnail video {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    color: var(--primary);
+    margin-top: 10px;
+}
+
+.media-card-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+
 }
 
 /* MODALE */
