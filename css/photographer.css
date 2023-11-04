@@ -5,6 +5,11 @@
     --text-secondary: #525252;
 }
 
+body {
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
 #contact_modal {
     display: none;
 }
@@ -16,6 +21,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 50px;
+}
+
+.photograph-header.container {
+    margin-bottom: 20px;
 }
 
 .photograph-header h1,
@@ -65,6 +74,82 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* TOOLBAR */
+#toolbar {
+    border: 1px solid red;
+}
+
+#sorter {
+    display: flex;
+    align-items: center;
+}
+
+#sort-label {
+    margin-right: 20px;
+}
+
+#sort-system {
+    position: relative;
+    width: 150px;
+}
+
+#sort-selected {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+}
+
+#sort-selected-value {
+    text-transform: capitalize;
+}
+
+.sort-icon {
+    margin-left: 10px;
+}
+
+#sort-options {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+}
+
+.sort-option {
+    padding: 10px;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sort-option:hover {
+    background-color: var(--secondary);
+}
+
+#sort-options .sort-option:nth-child(1) {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#sort-options .sort-option:nth-child(3) {
+    border-bottom: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* MODALE */
 
 .modal {
     border-radius: 5px;

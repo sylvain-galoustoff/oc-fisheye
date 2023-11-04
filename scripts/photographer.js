@@ -1,6 +1,7 @@
 import getPhotographerFromUrl from "./usecases/getPhotographerFromUrl.js"
 import PhotographerInfos from "./templates/PhotographerInfos.js"
 import Avatar from "./templates/Avatar.js"
+import Sorter from "./templates/Sorter.js"
 
 async function init() {
 
@@ -12,6 +13,8 @@ async function init() {
 
     const avatar = Avatar(name, portrait)
     document.getElementById('photograph-header-avatar').appendChild(avatar)
+
+    Sorter()
 
 }
 
