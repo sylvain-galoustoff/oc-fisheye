@@ -11,40 +11,51 @@
 
 <body>
 
-  <header>
-    <div class="container">
-      <a href="./index.html" title="Page d'accueil FishEye">
-        <img src="assets/images/logo.png" class="logo" />
-      </a>
-    </div>
+  <header class="container">
+    <a href="./index.html" title="Page d'accueil FishEye">
+      <img src="assets/images/logo.png" class="logo" alt="fisheye logo" />
+    </a>
   </header>
 
   <main id="main">
-    <div class="container">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+
+    <div class="photograph-header container">
+
+      <div class="photograph-header-part" id="photographer-infos">
+        <h1>Mimi Keel</h1>
+        <p class="location">London, UK</p>
+        <p class="tagline">Voir le beau au quotidien</p>
       </div>
+
+      <div class="photograph-header-part" id="photographer-header-button">
+        <button type="button" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      </div>
+
+      <div class="photograph-header-part" id="photograph-header-avatar">
+        <p>avatar</p>
+      </div>
+
     </div>
+
   </main>
 
   <div id="contact_modal">
     <div class="modal">
       <header>
         <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" />
+        <img src="assets/icons/close.svg" alt="Bouton de fermeture de la boite modale" />
       </header>
       <form>
         <div>
-          <label>Prénom</label>
-          <input />
+          <label for="input-first-name">Prénom</label>
+          <input id="input-first-name" />
         </div>
         <button class="contact_button">Envoyer</button>
       </form>
     </div>
   </div>
 
-  <script src="/scripts/pages/photographer.js"></script>
-  <script src="/scripts/utils/contactForm.js"></script>
+  <script type="module" src="/scripts/photographer.js"></script>
 
 </body>
 

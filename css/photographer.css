@@ -1,3 +1,10 @@
+:root {
+    --primary: #901c1c;
+    --secondary: #d3573c;
+    --text-primary: #000000;
+    --text-secondary: #525252;
+}
+
 #contact_modal {
     display: none;
 }
@@ -5,6 +12,46 @@
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.photograph-header h1,
+.photograph-header p {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.photograph-header-part {
+    flex: 1;
+    border: 1px solid red;
+}
+
+#photographer-header-button {
+    display: flex;
+    justify-content: center;
+}
+
+#photograph-header-avatar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.photograph-header h1 {
+    color: var(--secondary);
+    font-size: 64px;
+}
+
+.photograph-header .location {
+    color: var(--primary);
+    font-size: 24px;
+}
+
+.photograph-header .tagline {
+    color: var(--text-secondary);
+    font-size: 18px;
 }
 
 .contact_button {
