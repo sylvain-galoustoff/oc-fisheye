@@ -1,5 +1,6 @@
 import sortMedias from "../usecases/sortMedias.js"
 import mediaFactory from "../factory/mediaFactory.js"
+import DisplayMedias from "./DisplayMedias.js"
 
 export default function SortSelector(mediaList) {
 
@@ -21,12 +22,7 @@ export default function SortSelector(mediaList) {
     }
 
     const defaultMediaList = sortMedias(mediaList)
-    defaultMediaList.forEach(media => {
-        const card = mediaFactory(media)
-        if (card) {
-            mediasGrid.appendChild(card)
-        }
-    });
+    DisplayMedias(defaultMediaList, mediasGrid)
 
 
     for (let i = 0; i < options.length; i++) {
@@ -40,12 +36,8 @@ export default function SortSelector(mediaList) {
 
             const sortedMediaList = sortMedias(mediaList, criteria)
 
-            sortedMediaList.forEach(media => {
-                const card = mediaFactory(media)
-                if (card) {
-                    mediasGrid.appendChild(card)
-                }
-            });
+            DisplayMedias(sortedMediaList, mediasGrid)
+
         })
     }
 

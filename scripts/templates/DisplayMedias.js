@@ -1,11 +1,11 @@
 import mediaFactory from '../factory/mediaFactory.js'
 
-export default function DisplayMediaGrid(mediaList) {
+export default function DisplayMedias(mediaList, container) {
 
     mediaList.forEach(media => {
         const card = mediaFactory(media)
         if (card) {
-            return card
+            container.appendChild(card)
         }
     });
 
