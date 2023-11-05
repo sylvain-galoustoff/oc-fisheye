@@ -3,8 +3,8 @@ import getMediasFromUrl from "./usecases/getMediasFromUrl.js"
 
 import PhotographerInfos from "./templates/PhotographerInfos.js"
 import Avatar from "./templates/Avatar.js"
-import Sorter from "./templates/Sorter.js"
-import mediaFactory from "./factory/MediaFactory.js"
+import SortSelector from "./templates/SortSelector.js"
+import sortMedias from "./usecases/sortMedias.js"
 
 async function init() {
 
@@ -17,16 +17,8 @@ async function init() {
     const avatar = Avatar(name, portrait)
     document.getElementById('photograph-header-avatar').appendChild(avatar)
 
-    Sorter()
-
     const mediaList = await getMediasFromUrl()
-    mediaList.forEach(media => {
-        const card = mediaFactory(media)
-        console.log(card);
-        if (card) {
-            document.getElementById('medias').appendChild(card)
-        }
-    });
+    SortSelector(mediaList)
 
 }
 

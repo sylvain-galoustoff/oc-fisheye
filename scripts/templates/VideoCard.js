@@ -1,4 +1,4 @@
-export default function VideoCard({ photographerId, video, title }) {
+export default function VideoCard({ photographerId, video, title, likes }) {
 
     const folders = {
         243: "Mimi",
@@ -36,6 +36,10 @@ export default function VideoCard({ photographerId, video, title }) {
     const mediaCardLike = document.createElement('div')
     mediaCardLike.classList.add('media-card-like')
 
+    const likeCount = document.createElement('span')
+    likeCount.classList.add('like-count')
+    likeCount.textContent = likes
+
     const likeIcon = document.createElement('ion-icon')
     likeIcon.setAttribute('name', 'heart-outline')
 
@@ -43,9 +47,11 @@ export default function VideoCard({ photographerId, video, title }) {
     mediaLink.appendChild(videoElement)
     mediaCardThumbnail.appendChild(mediaLink)
 
+    mediaCardLike.appendChild(likeCount)
+    mediaCardLike.appendChild(likeIcon)
+
     mediaCardFooter.appendChild(mediaCardTitle)
     mediaCardFooter.appendChild(mediaCardLike)
-    mediaCardFooter.appendChild(likeIcon)
 
     mediaCard.appendChild(mediaCardThumbnail)
     mediaCard.appendChild(mediaCardFooter)
