@@ -24,7 +24,7 @@
       <div class="photograph-header-part" id="photographer-infos"></div>
 
       <div class="photograph-header-part" id="photographer-header-button">
-        <button type="button" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button type="button" class="contact_button" id="open-modal">Contactez-moi</button>
       </div>
 
       <div class="photograph-header-part" id="photograph-header-avatar"></div>
@@ -71,7 +71,7 @@
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="titre-modal">
       <header>
         <h2 id="titre-modal">Contactez-moi <span id="modal-photographer-name"></span></h2>
-        <img src="assets/icons/close.svg" alt="Bouton de fermeture de la boite modale" />
+        <img src="assets/icons/close.svg" alt="Bouton de fermeture de la boite modale" id="close-modal" />
       </header>
       <form id="contact-form">
         <div class="form-group">

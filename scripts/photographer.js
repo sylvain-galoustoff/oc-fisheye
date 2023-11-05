@@ -22,6 +22,24 @@ async function init() {
     const mediaList = await getMediasFromUrl()
     SortSelector(mediaList)
 
+    const modalButton = document.getElementById('open-modal')
+    modalButton.addEventListener('click', openModal)
+
+    const closeModalButton = document.getElementById('close-modal')
+    closeModalButton.addEventListener('click', closeModal)
+
+    const contactForm = document.getElementById('contact-form')
+    contactForm.addEventListener('submit', closeModal)
+
+    function openModal() {
+        document.getElementById('contact_modal').style.display = "flex"
+    }
+
+    function closeModal() {
+        document.getElementById('contact_modal').style.display = "none"
+        contactForm.reset()
+    }
+
     sendContactMessage()
 
 }
