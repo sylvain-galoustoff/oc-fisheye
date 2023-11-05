@@ -31,7 +31,6 @@ export default function SortSelector(mediaList) {
             mediasGrid.innerHTML = ""
 
             const criteria = options[i].getAttribute('data-sortBy')
-            console.log(criteria);
             sortSelectedValue.textContent = criteria
 
             const sortedMediaList = sortMedias(mediaList, criteria)

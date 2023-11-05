@@ -24,10 +24,10 @@ export default function ImageCard({ photographerId, image, title, likes }) {
 
     const img = document.createElement('img')
     img.setAttribute('src', `./assets/images/${folders[photographerId]}/${image}`)
-    img.setAttribute('alt', "")
+    img.setAttribute('alt', title)
 
-    const mediaCardFooter = document.createElement('div')
-    mediaCardFooter.classList.add('media-card-footer')
+    const mediaCardHeader = document.createElement('div')
+    mediaCardHeader.classList.add('media-card-header')
 
     const mediaCardTitle = document.createElement('h2')
     mediaCardTitle.classList.add('media-card-title')
@@ -49,11 +49,11 @@ export default function ImageCard({ photographerId, image, title, likes }) {
     mediaCardLike.appendChild(likeCount)
     mediaCardLike.appendChild(likeIcon)
 
-    mediaCardFooter.appendChild(mediaCardTitle)
-    mediaCardFooter.appendChild(mediaCardLike)
+    mediaCardHeader.appendChild(mediaCardTitle)
+    mediaCardHeader.appendChild(mediaCardLike)
 
+    mediaCard.appendChild(mediaCardHeader)
     mediaCard.appendChild(mediaCardThumbnail)
-    mediaCard.appendChild(mediaCardFooter)
 
     mediaWrapper.appendChild(mediaCard)
 

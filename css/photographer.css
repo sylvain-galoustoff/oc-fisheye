@@ -5,13 +5,13 @@
     --text-secondary: #525252;
 }
 
+*:focus-visible {
+    outline: black solid 3px;
+}
+
 body {
     font-size: 18px;
     color: var(--text-primary);
-}
-
-#contact_modal {
-    display: none;
 }
 
 .photograph-header {
@@ -168,16 +168,22 @@ body {
 
 .media-card {
     width: 350px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.media-card a {
+    display: block;
 }
 
 .media-card-thumbnail {
     height: 300px;
     border-radius: 5px;
-    overflow: hidden;
 }
 
 .media-card-thumbnail img,
 .media-card-thumbnail video {
+    border-radius: 5px;
     width: 350px;
     height: 300px;
     object-fit: cover;
@@ -186,7 +192,7 @@ body {
     justify-content: center;
 }
 
-.media-card-footer {
+.media-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -211,6 +217,17 @@ body {
 }
 
 /* MODALE */
+#contact_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(196, 196, 196, 0.40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .modal {
     border-radius: 5px;
@@ -225,18 +242,28 @@ body {
 }
 
 .modal header {
-    justify-content: space-between;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
+    height: auto;
 }
 
 .modal header img {
+    position: absolute;
+    top: 0;
+    right: 0;
     cursor: pointer;
 }
 
 .modal header h2 {
+    margin: 0;
     font-size: 64px;
     font-weight: normal;
-    text-align: center;
+}
+
+#modal-photographer-name {
+    display: block;
 }
 
 form {
@@ -259,9 +286,15 @@ form div {
     margin-bottom: 26px;
 }
 
-form input {
+form input,
+form textarea {
     width: 100%;
-    height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 24px;
+    padding: 10px;
+}
+
+form input {
+    height: 68px;
 }

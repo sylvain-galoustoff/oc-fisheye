@@ -26,8 +26,8 @@ export default function VideoCard({ photographerId, video, title, likes }) {
     const videoSource = document.createElement('source')
     videoSource.setAttribute('src', `./assets/images/${folders[photographerId]}/${video}`)
 
-    const mediaCardFooter = document.createElement('div')
-    mediaCardFooter.classList.add('media-card-footer')
+    const mediaCardHeader = document.createElement('div')
+    mediaCardHeader.classList.add('media-card-header')
 
     const mediaCardTitle = document.createElement('h2')
     mediaCardTitle.classList.add('media-card-title')
@@ -50,11 +50,11 @@ export default function VideoCard({ photographerId, video, title, likes }) {
     mediaCardLike.appendChild(likeCount)
     mediaCardLike.appendChild(likeIcon)
 
-    mediaCardFooter.appendChild(mediaCardTitle)
-    mediaCardFooter.appendChild(mediaCardLike)
+    mediaCardHeader.appendChild(mediaCardTitle)
+    mediaCardHeader.appendChild(mediaCardLike)
 
+    mediaCard.appendChild(mediaCardHeader)
     mediaCard.appendChild(mediaCardThumbnail)
-    mediaCard.appendChild(mediaCardFooter)
 
     mediaWrapper.appendChild(mediaCard)
 
