@@ -6,8 +6,10 @@ export default function ModalContact() {
     const closeModalButton = document.getElementById('close-modal')
     const modalContact = document.getElementById('modal-contact')
     const contactForm = document.getElementById('contact-form')
-    const focusableElement = modalContact.querySelector("#close-modal, .contact-input, .contact_button")
-    console.log(focusableElement);
+
+    const focusableElement = modalContact.querySelectorAll("#close-modal, .contact-input, .contact_button")
+    const firstFocusableElement = focusableElement[0]
+    const lastFocusableElement = focusableElement[focusableElement.length - 1]
 
     modalButton.addEventListener('click', openModal)
 
@@ -15,16 +17,33 @@ export default function ModalContact() {
 
     contactForm.addEventListener('submit', closeModal)
 
-    document.addEventListener('keydown', function (e) {
-        console.log('escape');
-        if (e.key === 'Escape') {
-            closeModal()
-        }
-    })
-
     function openModal() {
         document.getElementById('contact_modal').style.display = "flex"
+
+        document.addEventListener('keydown', function (e) {
+            let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+            if (!isTabPressed) {
+                return;
+            }
+
+            if (e.shiftKey) {
+                console.log('shift');
+                if (document.activeElement === firstFocusableElement) {
+                    lastFocusableElement.focus();
+                    e.preventDefault();
+                }
+            } else {
+                console.log('tab');
+                if (document.activeElement === lastFocusableElement) {
+                    firstFocusableElement.focus();
+                    e.preventDefault();
+                }
+            }
+        });
+
         firstFocusableElement.focus();
+
     }
 
     function closeModal() {

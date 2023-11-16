@@ -250,11 +250,13 @@ body {
     height: auto;
 }
 
-.modal header img {
+#close-modal {
     position: absolute;
     top: 0;
     right: 0;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
 .modal header h2 {
