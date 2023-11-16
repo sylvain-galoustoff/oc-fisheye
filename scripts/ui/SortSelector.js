@@ -1,5 +1,4 @@
 import sortMedias from "../usecases/sortMedias.js"
-import mediaFactory from "../factory/mediaFactory.js"
 import DisplayMedias from "../templates/DisplayMedias.js"
 
 export default function SortSelector(mediaList) {
@@ -11,6 +10,12 @@ export default function SortSelector(mediaList) {
     const options = document.getElementsByClassName('sort-option')
 
     sortSelected.addEventListener('click', openDropdown)
+    sortSelected.addEventListener('keypress', function (e) {
+        console.log(e.keyCode);
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            openDropdown()
+        }
+    })
     sortOptions.addEventListener('click', closeDropdown)
 
     function openDropdown() {

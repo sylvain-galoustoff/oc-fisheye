@@ -23,22 +23,23 @@ export default function ModalContact() {
         document.addEventListener('keydown', function (e) {
             let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
 
-            if (!isTabPressed) {
-                return;
-            }
+            if (isTabPressed) {
 
-            if (e.shiftKey) {
-                console.log('shift');
-                if (document.activeElement === firstFocusableElement) {
-                    lastFocusableElement.focus();
-                    e.preventDefault();
+                if (e.shiftKey) {
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                } else {
+                    if (document.activeElement === lastFocusableElement) {
+                        firstFocusableElement.focus();
+                        e.preventDefault();
+                    }
                 }
+            } else if (e.key === 'Escape' || e.keyCode === 27) {
+                closeModal()
             } else {
-                console.log('tab');
-                if (document.activeElement === lastFocusableElement) {
-                    firstFocusableElement.focus();
-                    e.preventDefault();
-                }
+                return
             }
         });
 
