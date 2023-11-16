@@ -1,6 +1,6 @@
 import sortMedias from "../usecases/sortMedias.js"
 import mediaFactory from "../factory/mediaFactory.js"
-import DisplayMedias from "./DisplayMedias.js"
+import DisplayMedias from "../templates/DisplayMedias.js"
 
 export default function SortSelector(mediaList) {
 

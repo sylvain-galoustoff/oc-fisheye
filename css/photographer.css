@@ -7,6 +7,7 @@
 
 *:focus-visible {
     outline: black solid 3px;
+    outline-offset: 5px;
 }
 
 body {
@@ -216,7 +217,7 @@ body {
     margin-left: 5px;
 }
 
-/* MODALE */
+/* MODALES */
 #contact_modal {
     position: fixed;
     top: 0;

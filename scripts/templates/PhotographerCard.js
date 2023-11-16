@@ -4,12 +4,12 @@ export default function PhotographerCard({ id, name, city, country, tagline, pri
 
     const article = document.createElement('article')
 
-    const articleBody = document.createElement('div')
-    articleBody.classList.add('article-body')
-
     const link = document.createElement('a')
     link.setAttribute('href', `./photographer.html?id=${id}`)
     link.setAttribute('title', `Voir la page de ${name}`)
+
+    const articleBody = document.createElement('div')
+    articleBody.classList.add('article-body')
 
     const h2 = document.createElement('h2');
     h2.textContent = name;
@@ -28,13 +28,13 @@ export default function PhotographerCard({ id, name, city, country, tagline, pri
     costPrice.classList.add('price')
     costPrice.textContent = `${price}/jour`
 
-    link.appendChild(avatar)
-    link.appendChild(h2)
-    articleBody.appendChild(link)
+    link.appendChild(articleBody)
+    articleBody.appendChild(avatar)
+    articleBody.appendChild(h2)
     articleBody.appendChild(location)
     articleBody.appendChild(slogan)
     articleBody.appendChild(costPrice)
-    article.appendChild(articleBody)
+    article.appendChild(link)
 
     return article
 
