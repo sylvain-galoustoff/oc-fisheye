@@ -22,6 +22,7 @@ async function init() {
     ModalContact()
 
     const mediaList = await getMediasFromUrl()
+
     SortSelector(mediaList)
 
 }
