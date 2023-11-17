@@ -1,4 +1,4 @@
-import sendContactMessage from "../usecases/sendContactMessage.js"
+import sendContactMessage from "../services/sendContactMessage.js"
 
 export default function ModalContact() {
 
@@ -36,10 +36,15 @@ export default function ModalContact() {
                         e.preventDefault();
                     }
                 }
+
             } else if (e.key === 'Escape' || e.keyCode === 27) {
+
                 closeModal()
+
             } else {
+
                 return
+
             }
         });
 

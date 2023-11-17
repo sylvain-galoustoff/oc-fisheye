@@ -45,16 +45,16 @@
             <ion-icon name="chevron-down-outline" class="sort-icon"></ion-icon>
           </p>
 
-          <div id="sort-options">
-            <div class="sort-option" data-sortBy="popularite">
+          <div id="sort-options" tabindex="-1">
+            <button type="button" class="sort-option" data-sortBy="popularite">
               Popularité <ion-icon name="chevron-up-outline" class="sort-icon"></ion-icon>
-            </div>
-            <div class="sort-option" data-sortBy="date">
+            </button>
+            <button type="button" class="sort-option" data-sortBy="date">
               Date
-            </div>
-            <div class="sort-option" data-sortBy="titre">
+            </button>
+            <button type="button" class="sort-option" data-sortBy="titre">
               Titre
-            </div>
+            </button>
           </div>
 
         </div>
@@ -100,6 +100,22 @@
         </div>
       </form>
     </div>
+  </div>
+
+  <div class="modal-wrapper" id="lightbox" aria-hidden="true" aria-label="image closeup view">
+
+    <button type="button" class="lightbox-arrow" id="previous-media">
+      <ion-icon name="chevron-back-sharp"></ion-icon>
+    </button>
+
+    <div id="lightbox-content">
+      <img src="./assets/images/Ellie_Rose/Architecture_Connected_Curves.jpg" alt="image">
+    </div>
+
+    <button type="button" class="lightbox-arrow" id="next-media">
+      <ion-icon name="chevron-forward-sharp"></ion-icon>
+    </button>
+
   </div>
 
   <script type="module" src="/scripts/photographer.js"></script>

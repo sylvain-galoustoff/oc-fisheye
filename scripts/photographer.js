@@ -1,5 +1,5 @@
-import getPhotographerFromUrl from "./usecases/getPhotographerFromUrl.js"
-import getMediasFromUrl from "./usecases/getMediasFromUrl.js"
+import getPhotographerFromUrl from "./services/getPhotographerFromUrl.js"
+import getMediasFromUrl from "./services/getMediasFromUrl.js"
 
 import PhotographerInfos from "./templates/PhotographerInfos.js"
 import Avatar from "./templates/Avatar.js"

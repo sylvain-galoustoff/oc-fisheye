@@ -1,4 +1,4 @@
-import sortMedias from "../usecases/sortMedias.js"
+import sortMedias from "../services/sortMedias.js"
 import DisplayMedias from "../templates/DisplayMedias.js"
 
 export default function SortSelector(mediaList) {
@@ -7,11 +7,15 @@ export default function SortSelector(mediaList) {
     const sortSelected = document.getElementById('sort-selected')
     const sortSelectedValue = document.getElementById('sort-selected-value')
     const sortOptions = document.getElementById('sort-options')
-    const options = document.getElementsByClassName('sort-option')
+    const options = sortOptions.getElementsByClassName('sort-option')
+
+    const firstOption = options[0]
+    const lastOption = options[options.length - 1]
+
+    console.log(lastOption);
 
     sortSelected.addEventListener('click', openDropdown)
     sortSelected.addEventListener('keypress', function (e) {
-        console.log(e.keyCode);
         if (e.key === 'Enter' || e.keyCode === 13) {
             openDropdown()
         }
@@ -20,6 +24,40 @@ export default function SortSelector(mediaList) {
 
     function openDropdown() {
         sortOptions.style.display = 'block'
+
+        document.addEventListener('keypress', function (e) {
+            console.log(document.activeElement);
+
+            const isTabPressed = e.key === 'Tab' || e.keyCode === 9
+
+            if (isTabPressed) {
+
+                if (e.shiftKey) {
+                    if (document.activeElement === firstOption) {
+                        lastOption.focus();
+                        e.preventDefault();
+                    }
+                } else {
+                    if (document.activeElement === lastOption) {
+                        firstOption.focus();
+                        e.preventDefault();
+                    }
+                }
+
+            } else if (e.key === 'Escape' || e.keyCode === 27) {
+
+                closeDropdown()
+
+            } else {
+
+                return
+
+            }
+
+        })
+
+        firstOption.focus()
+
     }
 
     function closeDropdown() {

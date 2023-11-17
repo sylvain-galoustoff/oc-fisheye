@@ -1,4 +1,4 @@
-import getAllPhotographers from "./usecases/getAllPhotographers.js"
+import getAllPhotographers from "./services/getAllPhotographers.js"
 import PhotographerCard from "./templates/PhotographerCard.js";
 
 async function init() {
