@@ -19,8 +19,6 @@ export function removeAccessibility() {
 }
 
 function trapFocus(firstFocusableElement, lastFocusableElement, e) {
-    console.log(firstFocusableElement);
-    console.log(lastFocusableElement);
 
     let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
 

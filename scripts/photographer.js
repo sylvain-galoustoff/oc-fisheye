@@ -5,6 +5,7 @@ import PhotographerInfos from "./templates/PhotographerInfos.js"
 import Avatar from "./templates/Avatar.js"
 import SortSelector from "./ui/SortSelector.js"
 import ModalContact from "./ui/ModalContact.js"
+import lightbox from "./ui/lightbox.js"
 
 async function init() {
 
@@ -24,6 +25,8 @@ async function init() {
     const mediaList = await getMediasFromUrl()
 
     SortSelector(mediaList)
+
+    lightbox()
 
 }
 
