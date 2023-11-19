@@ -1,29 +1,48 @@
+import Slide from "../templates/Slide.js";
+
 export default function lightbox() {
 
-    const lightBox = document.getElementById('lightbox')
     const mediaCard = document.querySelectorAll('.media-card')
-    const closeButton = document.getElementById('close-lightbox')
-    const medias = document.querySelectorAll('.media-card-thumbnail a')
+    const medias = document.querySelectorAll('.media-card-thumbnail a > *')
+    console.log(medias);
 
-    mediaCard.forEach(card => {
-        card.addEventListener('click', openLightbox)
+    const lightbox = document.getElementById('lightbox')
+    const lightboxContent = document.getElementById('lightbox-content')
+    const closeButton = document.getElementById('close-lightbox')
+    const lightboxArrow = document.querySelectorAll('.lightbox-arrow')
+
+    /* ECOUTEURS */
+    mediaCard.forEach((card, index) => {
+        card.addEventListener('click', openLightbox.bind(this, index))
     })
 
     closeButton.addEventListener('click', closeLightbox)
+    lightboxArrow.forEach(arrow => {
+        const direction = arrow.getAttribute('id')
+        arrow.addEventListener('click', changeSlide.bind(this, direction))
+    })
 
-    function openLightbox() {
-        lightBox.style.display = 'flex'
+    /* FONCTIONS */
+    function openLightbox(index) {
+        lightbox.style.display = 'flex'
+        medias.forEach(media => {
+            const cloneMedia = media.cloneNode(true)
+            const slide = Slide(cloneMedia)
+            lightboxContent.appendChild(slide)
+        })
+        console.log(index);
+        lightboxContent.style.transform = 'translateX(-' + index * 100 + '%)'
     }
 
     function closeLightbox() {
-        lightBox.style.display = 'none'
+        lightbox.style.display = 'none'
     }
 
-    medias.forEach(media => {
+    //Changement de media
+    function changeSlide(direction) {
 
-        console.log(media.children[0]);
-
-    })
+        console.log(direction);
+    }
 
 }
 
