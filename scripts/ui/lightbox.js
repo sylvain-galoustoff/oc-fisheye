@@ -10,6 +10,7 @@ export default function lightbox() {
   const lightbox = document.getElementById("lightbox");
   const lightboxContent = document.getElementById("lightbox-content");
   const closeButton = document.getElementById("close-lightbox");
+  const lightboxArrows = document.querySelectorAll(".lightbox-arrow");
 
   /* ECOUTEURS */
   mediaCards.forEach((card, index) => {
@@ -20,16 +21,54 @@ export default function lightbox() {
 
   /* Open and use lightbox */
   function openLightbox(index) {
+    let currentIndex = index;
+    console.log(currentIndex);
     lightbox.style.display = "flex";
     addAccessibilityToElement(lightbox);
 
-    const currentMedia = medias[index].cloneNode(true);
+    let currentMedia = medias[index].cloneNode(true);
+    insertMediaIntoLightbox(currentMedia);
 
-    const slide = document.createElement("div");
-    slide.classList.add("slide");
-    slide.appendChild(currentMedia);
-    lightboxContent.innerHTML = "";
-    lightboxContent.appendChild(currentMedia);
+    function insertMediaIntoLightbox(media) {
+      lightboxContent.innerHTML = "";
+      lightboxContent.appendChild(media);
+    }
+
+    lightboxArrows.forEach((arrow) => {
+      arrow.addEventListener("click", function () {
+        const direction = this.getAttribute("id");
+
+        if (direction === "previous-media") {
+          setPreviousIndex(currentIndex);
+        }
+
+        if (direction === "next-media") {
+          setNextIndex(currentIndex);
+        }
+
+        function setPreviousIndex(index) {
+          let newIndex = index;
+          if (index === 0) {
+            newIndex = medias.length - 1;
+          } else {
+            newIndex--;
+          }
+          currentIndex = newIndex;
+          insertMediaIntoLightbox(medias[currentIndex].cloneNode(true));
+        }
+
+        function setNextIndex(index) {
+          let newIndex = index;
+          if (index === medias.length - 1) {
+            newIndex = 0;
+          } else {
+            newIndex++;
+          }
+          currentIndex = newIndex;
+          insertMediaIntoLightbox(medias[currentIndex].cloneNode(true));
+        }
+      });
+    });
   }
 
   function closeLightbox() {
