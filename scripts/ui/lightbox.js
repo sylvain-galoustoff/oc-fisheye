@@ -1,4 +1,7 @@
-import Slide from "../templates/Slide.js";
+import {
+  addAccessibilityToElement,
+  removeAccessibilityToElement,
+} from "./accesibility.js";
 
 export default function lightbox() {
   const mediaCard = document.querySelectorAll(".media-card a");
@@ -15,10 +18,13 @@ export default function lightbox() {
 
   /* Open and use lightbox */
   function openLightbox() {
+    console.log("click");
     lightbox.style.display = "flex";
+    addAccessibilityToElement(lightbox);
   }
 
   function closeLightbox() {
     lightbox.style.display = "none";
+    removeAccessibilityToElement(lightbox);
   }
 }
