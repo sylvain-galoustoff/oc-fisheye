@@ -22,7 +22,6 @@ export default function lightbox() {
   /* Open and use lightbox */
   function openLightbox(index) {
     let currentIndex = index;
-    console.log(currentIndex);
     lightbox.style.display = "flex";
     addAccessibilityToElement(lightbox);
 
