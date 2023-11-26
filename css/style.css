@@ -138,6 +138,7 @@ h1 {
 
 .tagline {
     font-size: 14px;
+    color: var(--text-primary);
 }
 
 .price {
