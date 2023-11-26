@@ -1,6 +1,6 @@
 import likeButton from './likeButton.js'
 
-export default function VideoCard ({ photographerId, video, title, likes }) {
+export default function VideoCard ({ id, photographerId, video, title, likes }) {
   const folders = {
     243: 'Mimi',
     930: 'Ellie_Rose',
@@ -34,7 +34,7 @@ export default function VideoCard ({ photographerId, video, title, likes }) {
   mediaCardTitle.classList.add('media-card-title')
   mediaCardTitle.textContent = title
 
-  const likeSystem = likeButton(likes)
+  const likeSystem = likeButton(id)
 
   videoElement.appendChild(videoSource)
   mediaLink.appendChild(videoElement)

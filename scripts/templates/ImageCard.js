@@ -1,6 +1,6 @@
 import likeButton from './likeButton.js'
 
-export default function ImageCard ({ photographerId, image, title, likes }) {
+export default function ImageCard ({ id, photographerId, image, title, likes }) {
   const folders = {
     243: 'Mimi',
     930: 'Ellie_Rose',
@@ -34,7 +34,7 @@ export default function ImageCard ({ photographerId, image, title, likes }) {
   mediaCardTitle.classList.add('media-card-title')
   mediaCardTitle.textContent = title
 
-  const likeSystem = likeButton(likes)
+  const likeSystem = likeButton(id)
 
   mediaLink.appendChild(img)
   mediaCardThumbnail.appendChild(mediaLink)
