@@ -1,8 +1,7 @@
-import likeStore from '../store/likeStore.js'
+import likeStore, { countTotalLikes } from '../store/likeStore.js'
+import ResumeTab from './ResumeTab.js'
 
 export default function likeButton (mediaId) {
-  console.log(likeStore[mediaId])
-
   const mediaCardLike = document.createElement('div')
   mediaCardLike.classList.add('media-card-like')
 
@@ -38,8 +37,7 @@ export default function likeButton (mediaId) {
 
     likeCount.textContent = likeStore[mediaId].likes
     likeStore[mediaId].hasUserLike = !likeStore[mediaId].hasUserLike
-
-    console.log(likeStore[mediaId])
+    ResumeTab(countTotalLikes())
   }
 
   return mediaCardLike

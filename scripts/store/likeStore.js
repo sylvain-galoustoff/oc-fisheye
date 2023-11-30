@@ -10,3 +10,11 @@ medias.forEach(media => {
 })
 
 export default likeStore
+
+export function countTotalLikes () {
+  let total = 0
+  Object.values(likeStore).forEach(media => {
+    total = total + media.likes
+  })
+  return total
+}

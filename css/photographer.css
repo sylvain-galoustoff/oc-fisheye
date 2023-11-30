@@ -383,3 +383,23 @@ form input {
     max-width: 100%;
     max-height: 95%;
 }
+
+#resume-tab {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--secondary);
+    padding: 10px;
+    font-size: 24px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.total-likes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

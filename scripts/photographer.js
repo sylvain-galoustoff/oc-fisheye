@@ -1,10 +1,12 @@
 import getPhotographerFromUrl from './services/getPhotographerFromUrl.js'
 import getMediasFromUrl from './services/getMediasFromUrl.js'
+import { countTotalLikes } from './store/likeStore.js'
 
 import PhotographerInfos from './templates/PhotographerInfos.js'
 import Avatar from './templates/Avatar.js'
 import SortSelector from './ui/SortSelector.js'
 import ModalContact from './ui/ModalContact.js'
+import ResumeTab from './templates/ResumeTab.js'
 
 async function init () {
   const photographer = await getPhotographerFromUrl()
@@ -23,6 +25,8 @@ async function init () {
   const mediaList = await getMediasFromUrl()
 
   SortSelector(mediaList)
+
+  ResumeTab(countTotalLikes())
 }
 
 init()
