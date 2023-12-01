@@ -10,6 +10,8 @@ export default function likeButton (mediaId) {
   likeCount.textContent = likeStore[mediaId].likes
 
   const likeButton = document.createElement('button')
+  likeButton.setAttribute('type', 'button')
+  likeButton.setAttribute('aria-label', 'Cliquez ici si vous aimez ce media')
   likeButton.classList.add('like-button')
   likeButton.setAttribute('type', 'button')
 
