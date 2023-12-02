@@ -25,7 +25,7 @@ export default function PhotographerCard ({ id, name, city, country, tagline, pr
 
   const costPrice = document.createElement('p')
   costPrice.classList.add('price')
-  costPrice.textContent = `${price}/jour`
+  costPrice.textContent = `${price} € par jour`
 
   link.appendChild(articleBody)
   articleBody.appendChild(avatar)

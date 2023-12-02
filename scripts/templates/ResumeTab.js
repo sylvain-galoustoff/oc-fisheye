@@ -4,7 +4,6 @@ export default function ResumeTab (totalLikesNumber = 0) {
 
   const totalLikes = document.createElement('span')
   totalLikes.classList.add('total-likes')
-  // const likesCount = countTotalLikes()
   const likeIcon = document.createElement('ion-icon')
   likeIcon.setAttribute('name', 'heart')
 
